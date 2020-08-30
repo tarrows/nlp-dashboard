@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+starlette = "*"
+pydantic = "*"
+jinja2 = "*"
+aiofiles = "*"
+aiosqlite = "*"
+tortoise-orm = "*"
+pillow = "*"
+numpy = "*"
+pandas = "*"
+matplotlib = "*"
+scikit-learn = "*"
+spacy = "*"
+
+[requires]
+python_version = "3.7"

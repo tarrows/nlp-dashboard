@@ -1,1 +1,1 @@
-# text-mining-dashboard
+# nlp-dashboard
