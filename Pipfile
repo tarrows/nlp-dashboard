@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+flake8 = "*"
 
 [packages]
 fastapi = "*"
@@ -20,6 +21,10 @@ pandas = "*"
 matplotlib = "*"
 scikit-learn = "*"
 spacy = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+server = "uvicorn main:app --reload"
