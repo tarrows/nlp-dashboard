@@ -1,8 +1,10 @@
 from fastapi import FastAPI
+from lib import models
 
 app = FastAPI()
 
 
 @app.get('/')
 async def index():
-    return {"msg": "hello, world!"}
+    stories = await models.Story.all()
+    return {"stories": list(stories)}

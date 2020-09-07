@@ -22,6 +22,7 @@ matplotlib = "*"
 scikit-learn = "*"
 spacy = "*"
 requests = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.7"
@@ -29,3 +30,4 @@ python_version = "3.7"
 [scripts]
 server = "uvicorn main:app --reload"
 fetch = "python fetch.py"
+ogp = "python ogp.py"

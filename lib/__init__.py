@@ -1,1 +1,3 @@
-__all__ = ['models']
+from lib.opengraph import OpenGraph
+
+__all__ = ['models', 'OpenGraph']
