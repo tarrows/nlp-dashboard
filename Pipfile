@@ -30,4 +30,4 @@ python_version = "3.7"
 [scripts]
 server = "uvicorn main:app --reload"
 fetch = "python fetch.py"
-ogp = "python ogp.py"
+migrate = "python migrate.py"

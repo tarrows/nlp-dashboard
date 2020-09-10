@@ -3,7 +3,7 @@ from tortoise import fields
 
 
 class Story(Model):
-    id = fields.IntField()
+    id = fields.IntField(pk=True)
     title = fields.TextField()
     url = fields.TextField()
     score = fields.IntField()
