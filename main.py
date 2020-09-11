@@ -13,3 +13,13 @@ async def index():
     stories = await models.Story.all()
     await Tortoise.close_connections()
     return {"stories": list(stories)}
+
+
+@app.get('/stories')
+async def stories():
+    pass
+
+
+@app.get('/stories/{id}')
+async def story(id: int):
+    pass
