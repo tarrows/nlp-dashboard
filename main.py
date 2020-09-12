@@ -17,9 +17,11 @@ async def index():
 
 @app.get('/stories')
 async def stories():
-    pass
+    stories = await models.Story.all()
+    return stories
 
 
 @app.get('/stories/{id}')
 async def story(id: int):
-    pass
+    story = await models.Story.get_or_none(id=id)
+    return story
