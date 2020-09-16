@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from tortoise import Tortoise
+from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from lib import models
 
 app = FastAPI()
@@ -9,19 +9,17 @@ modules = {'models': ['lib.models']}
 
 @app.get('/')
 async def index():
-    await Tortoise.init(db_url=db_url, modules=modules)
-    stories = await models.Story.all()
-    await Tortoise.close_connections()
-    return {"stories": list(stories)}
+    return {"hello": "world"}
 
 
 @app.get('/stories')
 async def stories():
-    stories = await models.Story.all()
-    return stories
+    return await models.Story.all()
 
 
-@app.get('/stories/{id}')
+@app.get('/stories/{id}', responses={404: {"model": HTTPNotFoundError}})
 async def story(id: int):
-    story = await models.Story.get_or_none(id=id)
-    return story
+    return await models.Story.get(id=id)
+
+
+register_tortoise(app, db_url=db_url, modules=modules, add_exception_handlers=True)
