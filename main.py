@@ -9,7 +9,8 @@ modules = {'models': ['lib.models']}
 
 @app.get('/')
 async def index():
-    return {"hello": "world"}
+    count = await models.Story.all().count()
+    return {"count": count}
 
 
 @app.get('/stories')

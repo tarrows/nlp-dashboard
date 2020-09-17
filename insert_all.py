@@ -18,6 +18,7 @@ async def insert_all(db_url: str, modules: str, data: str):
     ]
 
     await Tortoise.init(db_url=db_url, modules=modules)
+    await models.Story.all().delete()
 
     for item in p.iterdir():
         if not item.suffix == '.json':

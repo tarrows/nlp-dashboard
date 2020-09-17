@@ -5,7 +5,7 @@ data = './data'
 url = 'https://hacker-news.firebaseio.com/v0'
 
 
-def fetch_hn(save_dir: str, base_url: str, take=50):
+def fetch_hn(save_dir: str, base_url: str, take=100):
     stories = requests.get(f'{base_url}/topstories.json').json()
     for story_id in stories[:take]:
         story = requests.get(f'{base_url}/item/{story_id}.json').json()
